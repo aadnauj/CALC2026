@@ -1,0 +1,23 @@
+:root { --ink: #000; --card: #f6cd8a; --outer: #b09166; }
+* { box-sizing: border-box; margin: 0; }
+body { min-height: 100vh; padding-top: 16px; background: var(--outer); font-family: "Inter", system-ui, sans-serif; color: var(--ink); }
+.container { max-width: 700px; min-height: calc(100vh - 16px); margin: 0 auto; padding: 56px 18px 64px; background: var(--card); border-radius: 32px 32px 0 0; }
+.profile { text-align: center; margin-bottom: 36px; }
+.logo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; }
+h1 { font-size: 1.35rem; font-weight: 700; }
+.profile p { margin: 6px 0 18px; font-size: .95rem; font-weight: 500; }
+.social { display: inline-flex; color: var(--ink); transition: transform .2s; }
+.social:hover { transform: scale(1.12); }
+.links { display: flex; flex-direction: column; gap: 12px; }
+.link {
+  position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  min-height: 56px; padding: 10px 44px; background: #fff; color: var(--ink);
+  border-radius: 10px; text-decoration: none; font-weight: 500; text-align: center;
+  transition: transform .2s ease, background .2s ease;
+}
+.link::after { content: "⋮"; position: absolute; right: 18px; color: #777; font-size: 1.1rem; }
+.link small { font-size: .75rem; color: #777; font-weight: 400; }
+.link:hover { background: #fff3dc; transform: scale(1.015); }
+.link:active { transform: scale(.98); }
+a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
